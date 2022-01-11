@@ -1,6 +1,6 @@
 ![](https://img.shields.io/badge/Microverse-blueviolet)
 
-# Webpack Templte
+# To-Do-List App
 
 Additional description about the project and its features.
 
@@ -15,10 +15,9 @@ npm start
 
 ## Authors
 
-👤 **Author1**
+👤 **Author**
 
-- GitHub: [@ahmedta](https://github.com/ahmedta)
-- Twitter: [@\_ahmedta](https://twitter.com/_ahmedta)
+- GitHub: [@Mwapsam](https://github.com/Mwapsam)
 
 ## 🤝 Contributing
 
