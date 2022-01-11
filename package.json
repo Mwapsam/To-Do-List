@@ -18,7 +18,7 @@
   "bugs": {
     "url": "https://github.com/Mwapsam/To-Do-List/issues"
   },
-  "homepage": "https://github.com/Mwapsam/To-Do-List#readme",
+  "homepage": "https://mwapsam.github.io/To-Do-List/",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.5.1",
