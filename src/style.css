@@ -41,10 +41,6 @@ body {
   color: #777;
 }
 
-.row p {
-  flex-basis: 80%;
-}
-
 .todos-list li {
   display: flex;
   flex-direction: row;
@@ -53,10 +49,8 @@ body {
   padding: 12px;
 }
 
-.add-input p {
-  font-family: var(--lato);
-  font-size: 1.2em;
-  color: #777;
+.row p {
+  flex-basis: 80%;
 }
 
 .todos-list li p {
@@ -73,8 +67,6 @@ body {
   border: none;
   width: 85%;
   height: 50px;
-  padding: 0 12px;
-  font-style: italic;
 }
 
 input[type='checkbox'] {
@@ -88,8 +80,4 @@ input[type='checkbox'] {
 
 .list div:last-child {
   border-bottom: none;
-}
-
-.fas {
-  margin-top: 8px;
 }
