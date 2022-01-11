@@ -6,7 +6,9 @@ Additional description about the project and its features.
 
 ## Getting Started
 
-after cloneing
+**Setup**
+
+git clone https://github.com/Mwapsam/To-Do-List.git
 
 ```
 npm install
