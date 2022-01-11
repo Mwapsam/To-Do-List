@@ -2,7 +2,7 @@
 
 # To-Do-List App
 
-Additional description about the project and its features.
+This is my to-do list website built with html, css and JavaScript. In this project I used Webpack to bundle JavaScript and ES6 modules to write modular JavaScript. 
 
 ## Getting Started
 
