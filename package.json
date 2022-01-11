@@ -10,15 +10,15 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ahmedtaa/webpack.git"
+    "url": "https://github.com/Mwapsam/To-Do-List.git"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ahmedtaa/webpack/issues"
+    "url": "https://github.com/Mwapsam/To-Do-List/issues"
   },
-  "homepage": "https://github.com/ahmedtaa/webpack#readme",
+  "homepage": "https://github.com/Mwapsam/To-Do-List#readme",
   "devDependencies": {
     "babel-eslint": "^10.1.0",
     "css-loader": "^6.5.1",
