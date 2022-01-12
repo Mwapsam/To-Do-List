@@ -1,0 +1,5 @@
+#todos-list li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}

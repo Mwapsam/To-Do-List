@@ -7,6 +7,17 @@
   --lato: lato, sans-serif;
 }
 
+body {
+  width: 100%;
+  height: 100vh;
+  background: rgb(240, 239, 243);
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .hello {
   color: blue;
 }
@@ -15,6 +26,8 @@
   display: flex;
   flex-direction: column;
   border: 1px solid #ddd;
+  width: 50%;
+  justify-self: center;
 }
 
 .row {
@@ -23,6 +36,24 @@
   align-items: baseline;
   gap: 10px;
   border-bottom: 1px solid #ddd;
+  font-family: var(--lato);
+  font-size: 1.2em;
+  color: #777;
+}
+
+.todos-list li {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: 1px solid #ddd;
+  padding: 12px;
+}
+
+.row p {
+  flex-basis: 80%;
+}
+
+.todos-list li p {
   font-family: var(--lato);
   font-size: 1.2em;
   color: #777;
@@ -49,8 +80,4 @@ input[type='checkbox'] {
 
 .list div:last-child {
   border-bottom: none;
-}
-
-.row p {
-  flex-basis: 80%;
 }
