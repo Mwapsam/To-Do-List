@@ -1,9 +1,7 @@
-/* eslint-disable default-case */
 const list = document.getElementById('todos-list');
-const addBtn = document.getElementById('todo-add-btn');
 const addInput = document.getElementById('todo-input');
 
-function createTodo() {
+export const createTodo = () => {
   const text = addInput.value;
 
   if (text === '') {
@@ -20,19 +18,39 @@ function createTodo() {
   paragraph.classList.add('paragraph');
   paragraph.textContent = text;
 
+  const div = document.createElement('div');
+  div.classList.add('span-item');
+
   const remove = document.createElement('span');
   remove.classList.add('remove');
-  remove.innerHTML = '&cross;';
+  // eslint-disable-next-line quotes
+  remove.innerHTML = `<i class="fas fa-ellipsis-v fas-item"></i>`;
 
   li.appendChild(checkbox);
   li.appendChild(paragraph);
-  li.appendChild(remove);
+  li.appendChild(div);
+  div.appendChild(remove);
   list.appendChild(li);
 
   addInput.value = '';
-}
+};
 
-function showEditInput(paregraphElement) {
+export const updateTodo = () => {
+  const editInput = document.getElementsByName('editInput')[0];
+  if (!editInput) {
+    // eslint-disable-next-line no-useless-return
+    return;
+  }
+  const newText = editInput.value;
+
+  if (newText !== '') {
+    const paragraph = editInput.parentElement.querySelector('paragraph');
+    paragraph.textContent = newText;
+  }
+  editInput.remove();
+};
+
+export const showEditInput = (paregraphElement) => {
   const editInput = document.getElementsByName('editInput')[0];
   if (editInput) {
     editInput.remove();
@@ -46,49 +64,16 @@ function showEditInput(paregraphElement) {
 
   paregraphElement.parentElement.appendChild(input);
   input.focus();
-}
+};
 
-function removeTodo(removeElement) {
+export const removeTodo = (removeElement) => {
   removeElement.parentElement.remove();
-}
+};
 
-function toggleComplete(inputElement) {
+export const toggleComplete = (inputElement) => {
   if (inputElement.checked === false) {
     inputElement.parentElement.classList.remove('complete');
   } else {
     inputElement.parentElement.classList.add('complete');
   }
-}
-
-list.addEventListener('click', (event) => {
-  event.stopPropagation();
-
-  switch (event.target.tagName) {
-    case 'p':
-      showEditInput();
-      break;
-    case 'SPAN':
-      removeTodo(event.target);
-      break;
-  }
-});
-
-list.addEventListener('change', (event) => {
-  if (event.target.tagName === 'INPUT' && event.target.type === 'checkbox') {
-    toggleComplete(event.target);
-  }
-});
-
-list.addEventListener('keypress', (event) => {
-  if (event.target.tagName === 'INPUT' && event.target.type === 'checkbox') {
-    toggleComplete(event.target);
-  }
-});
-
-addBtn.addEventListener('click', createTodo);
-
-addInput.addEventListener('keypress', (event) => {
-  if (event.key === 'Enter') {
-    createTodo();
-  }
-});
+};

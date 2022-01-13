@@ -1,12 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
-
-:root {
-  --white: #fff;
-  --gray: #ebebeb;
-  --text: #1f1f1f;
-  --lato: lato, sans-serif;
-}
-
 body {
   width: 100%;
   height: 100vh;
@@ -18,16 +10,13 @@ body {
   justify-content: center;
 }
 
-.hello {
-  color: blue;
-}
-
 .list {
   display: flex;
   flex-direction: column;
   border: 1px solid #ddd;
   width: 50%;
   justify-self: center;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .row {
@@ -43,10 +32,11 @@ body {
 
 .todos-list li {
   display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  justify-content: flex-start;
+  gap: 10px;
   border: 1px solid #ddd;
-  padding: 12px;
+  padding: 0 0 0 28px;
+  align-items: baseline;
 }
 
 .row p {
@@ -64,9 +54,14 @@ body {
 }
 
 .add-input {
+  margin: 0;
   border: none;
-  width: 85%;
-  height: 50px;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+  color: #777;
 }
 
 input[type='checkbox'] {
@@ -80,4 +75,9 @@ input[type='checkbox'] {
 
 .list div:last-child {
   border-bottom: none;
+}
+
+.span-item {
+  display: flex;
+  flex-direction: row-reverse;
 }
