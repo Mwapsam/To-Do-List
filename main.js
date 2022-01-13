@@ -17590,7 +17590,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n  --white: #fff;\r\n  --gray: #ebebeb;\r\n  --text: #1f1f1f;\r\n  --lato: lato, sans-serif;\r\n}\r\n\r\nbody {\r\n  width: 100%;\r\n  height: 100vh;\r\n  background: rgb(240, 239, 243);\r\n  margin: auto;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.hello {\r\n  color: blue;\r\n}\r\n\r\n.list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  border: 1px solid #ddd;\r\n  width: 50%;\r\n  justify-self: center;\r\n}\r\n\r\n.row {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: baseline;\r\n  gap: 10px;\r\n  border-bottom: 1px solid #ddd;\r\n  font-family: var(--lato);\r\n  font-size: 1.2em;\r\n  color: #777;\r\n}\r\n\r\n.todos-list li {\r\n  display: flex;\r\n  justify-content: flex-start;\r\n  gap: 10px;\r\n  border: 1px solid #ddd;\r\n  padding: 0 0 0 28px;\r\n  align-items: baseline;\r\n}\r\n\r\n.row p {\r\n  flex-basis: 80%;\r\n}\r\n\r\n.todos-list li p {\r\n  font-family: var(--lato);\r\n  font-size: 1.2em;\r\n  color: #777;\r\n}\r\n\r\n.rotate {\r\n  transform: rotate(90deg);\r\n}\r\n\r\n.add-input {\r\n  margin: 0;\r\n  border: none;\r\n  border-radius: 0;\r\n  width: 75%;\r\n  padding: 10px;\r\n  float: left;\r\n  font-size: 16px;\r\n  color: #777;\r\n}\r\n\r\ninput[type='checkbox'] {\r\n  transform: scale(1.3);\r\n}\r\n\r\n.clear {\r\n  text-align: center;\r\n  background-color: var(--gray);\r\n}\r\n\r\n.list div:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.remove {\r\n  position: inherit;\r\n  right: 0;\r\n  top: 0;\r\n  padding: 12px 16px 12px 586px;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n  --white: #fff;\r\n  --gray: #ebebeb;\r\n  --text: #1f1f1f;\r\n  --lato: lato, sans-serif;\r\n}\r\n\r\nbody {\r\n  width: 100%;\r\n  height: 100vh;\r\n  background: rgb(240, 239, 243);\r\n  margin: auto;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n/* .hello {\r\n  color: blue;\r\n} */\r\n\r\n.list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  border: 1px solid #ddd;\r\n  width: 50%;\r\n  justify-self: center;\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n}\r\n\r\n.row {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: baseline;\r\n  gap: 10px;\r\n  border-bottom: 1px solid #ddd;\r\n  font-family: var(--lato);\r\n  font-size: 1.2em;\r\n  color: #777;\r\n}\r\n\r\n.todos-list li {\r\n  display: flex;\r\n  justify-content: flex-start;\r\n  gap: 10px;\r\n  border: 1px solid #ddd;\r\n  padding: 0 0 0 28px;\r\n  align-items: baseline;\r\n}\r\n\r\n.row p {\r\n  flex-basis: 80%;\r\n}\r\n\r\n.todos-list li p {\r\n  font-family: var(--lato);\r\n  font-size: 1.2em;\r\n  color: #777;\r\n}\r\n\r\n.rotate {\r\n  transform: rotate(90deg);\r\n}\r\n\r\n.add-input {\r\n  margin: 0;\r\n  border: none;\r\n  border-radius: 0;\r\n  width: 75%;\r\n  padding: 10px;\r\n  float: left;\r\n  font-size: 16px;\r\n  color: #777;\r\n}\r\n\r\ninput[type='checkbox'] {\r\n  transform: scale(1.3);\r\n}\r\n\r\n.clear {\r\n  text-align: center;\r\n  background-color: var(--gray);\r\n}\r\n\r\n.list div:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.remove {\r\n  /* position: fixed; */\r\n  right: 28%;\r\n  top: 52%;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17722,6 +17722,7 @@ module.exports = function (cssWithMappingToString) {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
 /* harmony export */   "createTodo": () => (/* binding */ createTodo),
+/* harmony export */   "updateTodo": () => (/* binding */ updateTodo),
 /* harmony export */   "showEditInput": () => (/* binding */ showEditInput),
 /* harmony export */   "removeTodo": () => (/* binding */ removeTodo),
 /* harmony export */   "toggleComplete": () => (/* binding */ toggleComplete)
@@ -17757,6 +17758,21 @@ const createTodo = () => {
   list.appendChild(li);
 
   addInput.value = '';
+};
+
+const updateTodo = () => {
+  const editInput = document.getElementsByName('editInput')[0];
+  if (!editInput) {
+    // eslint-disable-next-line no-useless-return
+    return;
+  }
+  const newText = editInput.value;
+
+  if (newText !== '') {
+    const paragraph = editInput.parentElement.querySelector('paragraph');
+    paragraph.textContent = newText;
+  }
+  editInput.remove();
 };
 
 const showEditInput = (paregraphElement) => {
@@ -17905,7 +17921,7 @@ list.addEventListener('click', (event) => {
 
   switch (event.target.tagName) {
     case 'p':
-      (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.showEditInput)();
+      (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.showEditInput)(event.target);
       break;
     case 'SPAN':
       (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.removeTodo)(event.target);
@@ -17920,10 +17936,16 @@ list.addEventListener('change', (event) => {
 });
 
 list.addEventListener('keypress', (event) => {
-  if (event.target.tagName === 'INPUT' && event.target.type === 'checkbox') {
-    (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.toggleComplete)(event.target);
+  if (
+    event.target.tagName === 'INPUT' &&
+    event.target.type === 'text' &&
+    event.key === 'Enter'
+  ) {
+    (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.updateTodo)();
   }
 });
+
+document.addEventListener('click', (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.updateTodo)());
 
 addInput.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
