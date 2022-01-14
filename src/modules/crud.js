@@ -55,7 +55,7 @@ export const updateTodo = () => {
   const newText = editInput.value;
 
   if (newText !== '') {
-    const paragraph = editInput.parentElement.querySelector('paragraph');
+    const paragraph = editInput.parentElement.querySelector('.paragraph');
     paragraph.textContent = newText;
   }
   editInput.remove();

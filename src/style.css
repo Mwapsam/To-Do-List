@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
+
 body {
   width: 100%;
   height: 100vh;
@@ -12,7 +13,7 @@ body {
   margin: 120px auto;
   padding: 25px;
   border-radius: 5px;
-  box-shadow: 0px 10px 15px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .row {
@@ -41,7 +42,7 @@ body {
   margin: 8px;
   background: #f2f2f2;
   border-radius: 3px;
-  padding: 0px 17px;
+  padding: 0 17px;
   cursor: default;
   overflow: hidden;
   word-wrap: break-word;
@@ -71,6 +72,15 @@ body {
   font-size: 16px;
   background: #f2f2f2;
   color: #777;
+}
+
+.editInput {
+  position: absolute;
+  height: 55px;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  padding-left: 10px;
 }
 
 input[type='checkbox'] {
