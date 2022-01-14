@@ -101,3 +101,7 @@ input[type='checkbox'] {
   justify-content: flex-start;
   align-items: baseline;
 }
+
+button {
+  border: none;
+}

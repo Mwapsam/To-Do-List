@@ -4,7 +4,6 @@ import './style.css';
 import {
   createTodo,
   showEditInput,
-  removeTodo,
   toggleComplete,
   updateTodo,
   loadTodo,
@@ -22,9 +21,6 @@ list.addEventListener('click', (event) => {
     case 'P':
       showEditInput(event.target);
       break;
-    case 'I':
-      removeTodo(event.target);
-      break;
   }
 });
 
@@ -36,9 +32,9 @@ list.addEventListener('change', (event) => {
 
 list.addEventListener('keypress', (event) => {
   if (
-    event.target.tagName === 'INPUT'
-    && event.target.type === 'text'
-    && event.key === 'Enter'
+    event.target.tagName === 'INPUT' &&
+    event.target.type === 'text' &&
+    event.key === 'Enter'
   ) {
     updateTodo();
   }
@@ -46,7 +42,7 @@ list.addEventListener('keypress', (event) => {
 
 document.addEventListener('click', updateTodo());
 
-addBtn.addEventListener('click', createTodo());
+addBtn.addEventListener('click', loadTodo());
 
 addInput.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
