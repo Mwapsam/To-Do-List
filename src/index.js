@@ -7,6 +7,7 @@ import {
   removeTodo,
   toggleComplete,
   updateTodo,
+  loadTodo,
 } from './modules/crud.js';
 
 const list = document.getElementById('todos-list');
@@ -52,4 +53,6 @@ addInput.addEventListener('keypress', (event) => {
     createTodo();
   }
 });
+
+window.onload = loadTodo();
 // eslint-disable-next-line no-multiple-empty-lines

@@ -15,12 +15,14 @@
     "no-param-reassign": "off",
     "eol-last": "off",
     "import/extensions": [
-      1,
+      "error",
       {
-        "js": "always",
-        "json": "always"
+        "js": "ignorePackages"
       }
-    ]
+  ]
   },
-  "ignorePatterns": ["dist/", "build/"]
+  "ignorePatterns": [
+    "dist/",
+    "build/"
+  ]
 }

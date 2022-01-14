@@ -2,7 +2,7 @@
 
 # To-Do-List App
 
-This is my to-do list website built with html, css and JavaScript. In this project I used Webpack to bundle JavaScript and ES6 modules to write modular JavaScript. 
+This is my to-do list website built with html, css and JavaScript. In this project I used Webpack to bundle JavaScript and ES6 modules to write modular JavaScript.
 
 ![screenshot](./Screenshot.png)
 
@@ -54,11 +54,7 @@ npm start
 
 It will open your browser with the project homepage
 
-
-
-## Authors
-
-👤 **Author**
+👤 ## Author
 
 - GitHub: [@Mwapsam](https://github.com/Mwapsam)
 

@@ -5,64 +5,113 @@
 const list = document.getElementById('todos-list');
 const addInput = document.getElementById('todo-input');
 
+let listArray = [];
+
+const getLocal = () => {
+  const possibleList = localStorage.getItem('New Todo');
+  if (possibleList !== undefined && possibleList !== null) {
+    return JSON.parse(possibleList);
+  }
+
+  return listArray;
+};
+
+const updateLocal = (newData) => {
+  localStorage.setItem('New Todo', JSON.stringify(newData));
+};
+
+export const loadTodo = () => {
+  list.innerHTML = '';
+  const local = getLocal();
+
+  local.forEach((element, i) => {
+    const li = document.createElement('li');
+
+    const checkbox = document.createElement('input');
+    checkbox.classList.add('checkbox');
+    checkbox.type = 'checkbox';
+
+    const paragraph = document.createElement('p');
+    paragraph.id = i;
+    paragraph.classList.add('paragraph');
+    paragraph.textContent = element.description;
+
+    const div = document.createElement('div');
+    div.classList.add('TextItems');
+
+    const remove = document.createElement('span');
+    remove.classList.add('remove');
+    // eslint-disable-next-line quotes
+    remove.innerHTML = `<i class="fas fa-trash delete-icon"></i>`;
+
+    li.appendChild(checkbox);
+    li.appendChild(paragraph);
+    li.appendChild(remove);
+    list.appendChild(li);
+
+    addInput.value = '';
+  });
+};
+
 export const createTodo = () => {
   const text = addInput.value;
-  const getLocalStorageData = localStorage.getItem('New Todo');
-  if (getLocalStorageData == null) {
-    var listArray = [];
-  } else {
-    var listArray = JSON.parse(getLocalStorageData);
-  }
-  listArray.push(text);
-  localStorage.setItem('New Todo', JSON.stringify(listArray));
 
   if (text === '') {
     return;
   }
 
-  const li = document.createElement('li');
+  listArray = getLocal();
 
-  const checkbox = document.createElement('input');
-  checkbox.classList.add('checkbox');
-  checkbox.type = 'checkbox';
+  listArray.push({
+    completed: false,
+    index: listArray.length + 1,
+    description: text,
+  });
 
-  const paragraph = document.createElement('p');
-  paragraph.classList.add('paragraph');
-  paragraph.textContent = text;
-
-  const div = document.createElement('div');
-  div.classList.add('TextItems');
-
-  const remove = document.createElement('span');
-  remove.classList.add('remove');
-  // eslint-disable-next-line quotes
-  remove.innerHTML = `<i class="fas fa-trash delete-icon"></i>`;
-
-  li.appendChild(checkbox);
-  li.appendChild(paragraph);
-  li.appendChild(remove);
-  list.appendChild(li);
-
-  addInput.value = '';
+  updateLocal(listArray);
+  loadTodo();
 };
 
 export const updateTodo = () => {
   const editInput = document.getElementsByName('editInput')[0];
+
   if (!editInput) {
     // eslint-disable-next-line no-useless-return
     return;
   }
+
   const newText = editInput.value;
 
   if (newText !== '') {
     const paragraph = editInput.parentElement.querySelector('.paragraph');
-    paragraph.textContent = newText;
+    const position = parseInt(paragraph.id, 10);
+
+    const local = getLocal();
+
+    const newList = [];
+
+    local.forEach((element, i) => {
+      if (position === i) {
+        newList.push({
+          index: element.index,
+          description: newText,
+          completed: element.completed,
+        });
+      } else {
+        newList.push(element);
+      }
+    });
+
+    updateLocal(newList);
+    loadTodo();
   }
+
   editInput.remove();
 };
 
 export const showEditInput = (paregraphElement) => {
   const editInput = document.getElementsByName('editInput')[0];
+
   if (editInput) {
     editInput.remove();
   }
