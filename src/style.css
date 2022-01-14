@@ -31,12 +31,11 @@ body {
 }
 
 .todos-list li {
-  display: flex;
-  justify-content: flex-start;
-  gap: 10px;
+  display: grid;
+  grid-template-columns: 1fr 13fr 1fr;
   border: 1px solid #ddd;
   padding: 0 0 0 28px;
-  align-items: baseline;
+  align-items: baseline; 
 }
 
 .row p {
@@ -79,5 +78,6 @@ input[type='checkbox'] {
 
 .span-item {
   display: flex;
-  flex-direction: row-reverse;
+  justify-content: flex-start;
+  align-items: baseline;
 }

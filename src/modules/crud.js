@@ -1,8 +1,20 @@
+/* eslint-disable no-redeclare */
+/* eslint-disable block-scoped-var */
+/* eslint-disable no-var */
+/* eslint-disable vars-on-top */
 const list = document.getElementById('todos-list');
 const addInput = document.getElementById('todo-input');
 
 export const createTodo = () => {
   const text = addInput.value;
+  const getLocalStorageData = localStorage.getItem('New Todo');
+  if (getLocalStorageData == null) {
+    var listArray = [];
+  } else {
+    var listArray = JSON.parse(getLocalStorageData);
+  }
+  listArray.push(text);
+  localStorage.setItem('New Todo', JSON.stringify(listArray));
 
   if (text === '') {
     return;
@@ -19,17 +31,16 @@ export const createTodo = () => {
   paragraph.textContent = text;
 
   const div = document.createElement('div');
-  div.classList.add('span-item');
+  div.classList.add('TextItems');
 
   const remove = document.createElement('span');
   remove.classList.add('remove');
   // eslint-disable-next-line quotes
-  remove.innerHTML = `<i class="fas fa-ellipsis-v fas-item"></i>`;
+  remove.innerHTML = `<i class="fas fa-trash delete-icon"></i>`;
 
   li.appendChild(checkbox);
   li.appendChild(paragraph);
-  li.appendChild(div);
-  div.appendChild(remove);
+  li.appendChild(remove);
   list.appendChild(li);
 
   addInput.value = '';
@@ -66,8 +77,12 @@ export const showEditInput = (paregraphElement) => {
   input.focus();
 };
 
-export const removeTodo = (removeElement) => {
-  removeElement.parentElement.remove();
+export const removeTodo = (removeElement, index) => {
+  const getLocalStorageData = localStorage.getItem('New Todo');
+  const listArray = JSON.parse(getLocalStorageData);
+  listArray.splice(index, 1);
+  localStorage.setItem('New Todo', JSON.stringify(listArray));
+  removeElement.parentElement.parentElement.remove();
 };
 
 export const toggleComplete = (inputElement) => {

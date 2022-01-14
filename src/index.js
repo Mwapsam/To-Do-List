@@ -1,3 +1,8 @@
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable no-redeclare */
+/* eslint-disable no-var */
+/* eslint-disable vars-on-top */
+/* eslint-disable block-scoped-var */
 /* eslint-disable quotes */
 /* eslint-disable default-case */
 import { component } from './modules/lodash.js';
@@ -18,12 +23,11 @@ document.body.appendChild(component());
 
 list.addEventListener('click', (event) => {
   event.stopPropagation();
-
   switch (event.target.tagName) {
     case 'p':
       showEditInput(event.target);
       break;
-    case 'SPAN':
+    case 'I':
       removeTodo(event.target);
       break;
   }
@@ -37,9 +41,9 @@ list.addEventListener('change', (event) => {
 
 list.addEventListener('keypress', (event) => {
   if (
-    event.target.tagName === 'INPUT' &&
-    event.target.type === 'text' &&
-    event.key === 'Enter'
+    event.target.tagName === 'INPUT'
+    && event.target.type === 'text'
+    && event.key === 'Enter'
   ) {
     updateTodo();
   }
