@@ -4,6 +4,19 @@
 
 This is my to-do list website built with html, css and JavaScript. In this project I used Webpack to bundle JavaScript and ES6 modules to write modular JavaScript. 
 
+![screenshot](./Screenshot.png)
+
+## Built With
+
+- Webpack
+- HTML
+- CSS
+- Modular JavaScript (with modern ES6 syntax)
+
+## Live Demo
+
+[Live Demo Link](https://mwapsam.github.io/To-Do-List/)
+
 ## Getting Started
 
 **Setup**
@@ -14,6 +27,34 @@ git clone https://github.com/Mwapsam/To-Do-List.git
 npm install
 npm start
 ```
+
+### Prerequisites
+
+You need to have NODE.JS set up on your local machine.
+
+### Setup
+
+Download the project and unzip it.
+
+### Install
+
+Execute this command on your terminal
+
+```
+npm install
+```
+
+### Deployment
+
+Execute this command on your terminal
+
+```
+npm start
+```
+
+It will open your browser with the project homepage
+
+
 
 ## Authors
 
