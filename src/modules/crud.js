@@ -62,8 +62,7 @@ export const loadTodo = () => {
         loadTodo();
       });
       remove.classList.add('remove');
-      // eslint-disable-next-line quotes
-      remove.innerHTML = `<i class="fas fa-trash delete-icon"></i>`;
+      remove.innerHTML = '<i class="fas fa-trash delete-icon"></i>';
 
       li.appendChild(checkbox);
       li.appendChild(paragraph);

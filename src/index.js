@@ -16,11 +16,12 @@ document.body.appendChild(component());
 
 list.addEventListener('click', (event) => {
   event.stopPropagation();
-  // eslint-disable-next-line default-case
   switch (event.target.tagName) {
     case 'P':
       showEditInput(event.target);
       break;
+
+    default:
   }
 });
 
