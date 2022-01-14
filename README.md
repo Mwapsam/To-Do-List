@@ -23,6 +23,7 @@ This is my to-do list website built with html, css and JavaScript. In this proje
 
 git clone https://github.com/Mwapsam/To-Do-List.git
 
+Execute the following commands on your terminal
 ```
 npm install
 npm start
@@ -32,24 +33,14 @@ npm start
 
 You need to have NODE.JS set up on your local machine.
 
-### Setup
-
-Download the project and unzip it.
-
-### Install
-
-Execute this command on your terminal
-
-```
-npm install
-```
 
 ### Deployment
 
-Execute this command on your terminal
+Execute the following commands on your terminal
 
 ```
-npm start
+npm run build
+npm run deploy
 ```
 
 It will open your browser with the project homepage
