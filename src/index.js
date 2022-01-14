@@ -1,60 +1,54 @@
+import { component } from './modules/lodash.js';
 import './style.css';
+import {
+  createTodo,
+  showEditInput,
+  toggleComplete,
+  updateTodo,
+  loadTodo,
+} from './modules/crud.js';
 
-const listData = [
-  {
-    description: 'Shopping',
-    completed: false,
-    index: 0,
-  },
-  {
-    description: 'Coding',
-    completed: false,
-    index: 1,
-  },
-  {
-    description: 'Learning',
-    completed: false,
-    index: 2,
-  },
-  {
-    description: 'Dancing',
-    completed: false,
-    index: 3,
-  },
-  {
-    description: 'Praying',
-    completed: false,
-    index: 3,
-  },
-];
+const list = document.getElementById('todos-list');
+const addInput = document.getElementById('todo-input');
+const addBtn = document.getElementById('rotate');
 
-let listMarkUp = `
-        <div class="row title">
-            <p>Today's To Do</p>
-            <i class="fas fa-sync"></i>
-        </div>
-        <div class="row">
-            <input class="add-input" type="text" placeholder="Add to your list">
-            <i class="fas fa-level-down-alt rotate"></i>
-        </div>
-`;
+document.body.appendChild(component());
 
-listData.forEach((listItem) => {
-  listMarkUp += `
-        <div class="row">
-            <input type="checkbox">
-            <p>${listItem.description}</p>
-            <i class="fas fa-ellipsis-v"></i>
-        </div>
-        
-  `;
+list.addEventListener('click', (event) => {
+  event.stopPropagation();
+  switch (event.target.tagName) {
+    case 'P':
+      showEditInput(event.target);
+      break;
+
+    default:
+  }
 });
 
-listMarkUp += `
-        <div class="row clear">
-            <p>Clear All Completed</p>
-        </div>
-`;
+list.addEventListener('change', (event) => {
+  if (event.target.tagName === 'INPUT' && event.target.type === 'checkbox') {
+    toggleComplete(event.target);
+  }
+});
 
-const listElement = document.querySelector('.list');
-listElement.innerHTML = listMarkUp;
+list.addEventListener('keypress', (event) => {
+  if (
+    event.target.tagName === 'INPUT'
+    && event.target.type === 'text'
+    && event.key === 'Enter'
+  ) {
+    updateTodo();
+  }
+});
+
+document.addEventListener('click', updateTodo());
+
+addBtn.addEventListener('click', loadTodo());
+
+addInput.addEventListener('keypress', (event) => {
+  if (event.key === 'Enter') {
+    createTodo();
+  }
+});
+
+window.onload = loadTodo();

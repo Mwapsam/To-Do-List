@@ -1,33 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Lato&display=swap');
 
-:root {
-  --white: #fff;
-  --gray: #ebebeb;
-  --text: #1f1f1f;
-  --lato: lato, sans-serif;
-}
-
 body {
   width: 100%;
   height: 100vh;
   background: rgb(240, 239, 243);
-  margin: auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-
-.hello {
-  color: blue;
 }
 
 .list {
-  display: flex;
-  flex-direction: column;
-  border: 1px solid #ddd;
-  width: 50%;
-  justify-self: center;
+  background: #f2f2f2;
+  max-width: 400px;
+  width: 100%;
+  margin: 120px auto;
+  padding: 25px;
+  border-radius: 5px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
 }
 
 .row {
@@ -41,12 +27,25 @@ body {
   color: #777;
 }
 
+.todos-list {
+  max-height: 300px;
+  overflow-y: auto;
+}
+
 .todos-list li {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-evenly;
+  display: grid;
+  grid-template-columns: 1fr 13fr 1fr;
   border: 1px solid #ddd;
-  padding: 12px;
+  align-items: baseline;
+  position: relative;
+  list-style: none;
+  margin: 8px;
+  background: #f2f2f2;
+  border-radius: 3px;
+  padding: 0 17px;
+  cursor: default;
+  overflow: hidden;
+  word-wrap: break-word;
 }
 
 .row p {
@@ -64,9 +63,24 @@ body {
 }
 
 .add-input {
+  margin: 0;
   border: none;
-  width: 85%;
-  height: 50px;
+  border-radius: 0;
+  width: 75%;
+  padding: 10px;
+  float: left;
+  font-size: 16px;
+  background: #f2f2f2;
+  color: #777;
+}
+
+.editInput {
+  position: absolute;
+  height: 55px;
+  width: 100%;
+  border: none;
+  font-size: 20px;
+  padding-left: 10px;
 }
 
 input[type='checkbox'] {
@@ -80,4 +94,14 @@ input[type='checkbox'] {
 
 .list div:last-child {
   border-bottom: none;
+}
+
+.span-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: baseline;
+}
+
+button {
+  border: none;
 }
