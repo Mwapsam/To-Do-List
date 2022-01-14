@@ -17725,7 +17725,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "createTodo": () => (/* binding */ createTodo),
 /* harmony export */   "updateTodo": () => (/* binding */ updateTodo),
 /* harmony export */   "showEditInput": () => (/* binding */ showEditInput),
-/* harmony export */   "removeTodo": () => (/* binding */ removeTodo),
 /* harmony export */   "toggleComplete": () => (/* binding */ toggleComplete)
 /* harmony export */ });
 /* eslint-disable no-redeclare */
@@ -17750,36 +17749,62 @@ const updateLocal = (newData) => {
   localStorage.setItem('New Todo', JSON.stringify(newData));
 };
 
+const mSort = (callback) => {
+  const currentList = getLocal();
+
+  const mSorted = [];
+
+  for (let m = 0; m < currentList.length; m += 1) {
+    const e = currentList[m];
+    e.index = m + 1;
+    mSorted.push(e);
+
+    if (m === currentList.length - 1) {
+      updateLocal(mSorted);
+    }
+  }
+
+  callback();
+};
+
 const loadTodo = () => {
-  list.innerHTML = '';
-  const local = getLocal();
+  mSort(() => {
+    list.innerHTML = '';
+    const local = getLocal();
 
-  local.forEach((element, i) => {
-    const li = document.createElement('li');
+    local.forEach((element, i) => {
+      const li = document.createElement('li');
+      const checkbox = document.createElement('input');
+      checkbox.classList.add('checkbox');
+      checkbox.type = 'checkbox';
 
-    const checkbox = document.createElement('input');
-    checkbox.classList.add('checkbox');
-    checkbox.type = 'checkbox';
+      const paragraph = document.createElement('p');
+      paragraph.id = i;
+      paragraph.classList.add('paragraph');
+      paragraph.textContent = element.description;
 
-    const paragraph = document.createElement('p');
-    paragraph.id = i;
-    paragraph.classList.add('paragraph');
-    paragraph.textContent = element.description;
+      const div = document.createElement('div');
+      div.classList.add('TextItems');
 
-    const div = document.createElement('div');
-    div.classList.add('TextItems');
+      const remove = document.createElement('button');
+      remove.value = i;
+      remove.addEventListener('click', () => {
+        const local = getLocal();
+        local.splice(i, 1);
+        updateLocal(local);
+        loadTodo();
+      });
+      remove.classList.add('remove');
+      // eslint-disable-next-line quotes
+      remove.innerHTML = `<i class="fas fa-trash delete-icon"></i>`;
 
-    const remove = document.createElement('span');
-    remove.classList.add('remove');
-    // eslint-disable-next-line quotes
-    remove.innerHTML = `<i class="fas fa-trash delete-icon"></i>`;
+      li.appendChild(checkbox);
+      li.appendChild(paragraph);
+      li.appendChild(remove);
+      list.appendChild(li);
 
-    li.appendChild(checkbox);
-    li.appendChild(paragraph);
-    li.appendChild(remove);
-    list.appendChild(li);
-
-    addInput.value = '';
+      addInput.value = '';
+    });
   });
 };
 
@@ -17854,14 +17879,6 @@ const showEditInput = (paregraphElement) => {
 
   paregraphElement.parentElement.appendChild(input);
   input.focus();
-};
-
-const removeTodo = (removeElement, index) => {
-  const getLocalStorageData = localStorage.getItem('New Todo');
-  const listArray = JSON.parse(getLocalStorageData);
-  listArray.splice(index, 1);
-  localStorage.setItem('New Todo', JSON.stringify(listArray));
-  removeElement.parentElement.parentElement.remove();
 };
 
 const toggleComplete = (inputElement) => {
@@ -17990,9 +18007,6 @@ list.addEventListener('click', (event) => {
   switch (event.target.tagName) {
     case 'P':
       (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.showEditInput)(event.target);
-      break;
-    case 'I':
-      (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.removeTodo)(event.target);
       break;
   }
 });
