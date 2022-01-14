@@ -17590,7 +17590,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, ":root {\r\n  --white: #fff;\r\n  --gray: #ebebeb;\r\n  --text: #1f1f1f;\r\n  --lato: lato, sans-serif;\r\n}\r\n\r\nbody {\r\n  width: 100%;\r\n  height: 100vh;\r\n  background: rgb(240, 239, 243);\r\n  margin: auto;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n/* .hello {\r\n  color: blue;\r\n} */\r\n\r\n.list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  border: 1px solid #ddd;\r\n  width: 50%;\r\n  justify-self: center;\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n}\r\n\r\n.row {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: baseline;\r\n  gap: 10px;\r\n  border-bottom: 1px solid #ddd;\r\n  font-family: var(--lato);\r\n  font-size: 1.2em;\r\n  color: #777;\r\n}\r\n\r\n.todos-list li {\r\n  display: flex;\r\n  justify-content: flex-start;\r\n  gap: 10px;\r\n  border: 1px solid #ddd;\r\n  padding: 0 0 0 28px;\r\n  align-items: baseline;\r\n}\r\n\r\n.row p {\r\n  flex-basis: 80%;\r\n}\r\n\r\n.todos-list li p {\r\n  font-family: var(--lato);\r\n  font-size: 1.2em;\r\n  color: #777;\r\n}\r\n\r\n.rotate {\r\n  transform: rotate(90deg);\r\n}\r\n\r\n.add-input {\r\n  margin: 0;\r\n  border: none;\r\n  border-radius: 0;\r\n  width: 75%;\r\n  padding: 10px;\r\n  float: left;\r\n  font-size: 16px;\r\n  color: #777;\r\n}\r\n\r\ninput[type='checkbox'] {\r\n  transform: scale(1.3);\r\n}\r\n\r\n.clear {\r\n  text-align: center;\r\n  background-color: var(--gray);\r\n}\r\n\r\n.list div:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.remove {\r\n  /* position: fixed; */\r\n  right: 28%;\r\n  top: 52%;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  width: 100%;\r\n  height: 100vh;\r\n  background: rgb(240, 239, 243);\r\n  margin: auto;\r\n  display: flex;\r\n  flex-direction: column;\r\n  align-items: center;\r\n  justify-content: center;\r\n}\r\n\r\n.list {\r\n  display: flex;\r\n  flex-direction: column;\r\n  border: 1px solid #ddd;\r\n  width: 50%;\r\n  justify-self: center;\r\n  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);\r\n}\r\n\r\n.row {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: baseline;\r\n  gap: 10px;\r\n  border-bottom: 1px solid #ddd;\r\n  font-family: var(--lato);\r\n  font-size: 1.2em;\r\n  color: #777;\r\n}\r\n\r\n.todos-list li {\r\n  display: grid;\r\n  grid-template-columns: 1fr 13fr 1fr;\r\n  border: 1px solid #ddd;\r\n  padding: 0 0 0 28px;\r\n  align-items: baseline; \r\n}\r\n\r\n.row p {\r\n  flex-basis: 80%;\r\n}\r\n\r\n.todos-list li p {\r\n  font-family: var(--lato);\r\n  font-size: 1.2em;\r\n  color: #777;\r\n}\r\n\r\n.rotate {\r\n  transform: rotate(90deg);\r\n}\r\n\r\n.add-input {\r\n  margin: 0;\r\n  border: none;\r\n  border-radius: 0;\r\n  width: 75%;\r\n  padding: 10px;\r\n  float: left;\r\n  font-size: 16px;\r\n  color: #777;\r\n}\r\n\r\ninput[type='checkbox'] {\r\n  transform: scale(1.3);\r\n}\r\n\r\n.clear {\r\n  text-align: center;\r\n  background-color: var(--gray);\r\n}\r\n\r\n.list div:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.span-item {\r\n  display: flex;\r\n  justify-content: flex-start;\r\n  align-items: baseline;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17747,17 +17747,23 @@ const createTodo = () => {
   paragraph.classList.add('paragraph');
   paragraph.textContent = text;
 
+  const div = document.createElement('div');
+  div.classList.add('TextItems');
+
   const remove = document.createElement('span');
   remove.classList.add('remove');
   // eslint-disable-next-line quotes
-  remove.innerHTML = `<i class="fas fa-ellipsis-v fas-item"></i>`;
+  remove.innerHTML = `<i class="fas fa-trash delete-icon"></i>`;
 
   li.appendChild(checkbox);
   li.appendChild(paragraph);
   li.appendChild(remove);
   list.appendChild(li);
-
   addInput.value = '';
+
+  const getLocalStorageData = localStorage.getItem('New Todo');
+  const listArray = JSON.parse(getLocalStorageData);
+  localStorage.setItem('New Todo', JSON.stringify(listArray));
 };
 
 const updateTodo = () => {
@@ -17792,7 +17798,7 @@ const showEditInput = (paregraphElement) => {
 };
 
 const removeTodo = (removeElement) => {
-  removeElement.parentElement.remove();
+  removeElement.parentElement.parentElement.remove();
 };
 
 const toggleComplete = (inputElement) => {
@@ -17905,6 +17911,11 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_lodash_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 /* harmony import */ var _modules_crud_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
+/* eslint-disable no-trailing-spaces */
+/* eslint-disable no-redeclare */
+/* eslint-disable no-var */
+/* eslint-disable vars-on-top */
+/* eslint-disable block-scoped-var */
 /* eslint-disable quotes */
 /* eslint-disable default-case */
 
@@ -17913,17 +17924,17 @@ __webpack_require__.r(__webpack_exports__);
 
 const list = document.getElementById('todos-list');
 const addInput = document.getElementById('todo-input');
+const addBtn = document.getElementById('rotate');
 
 document.body.appendChild((0,_modules_lodash_js__WEBPACK_IMPORTED_MODULE_0__.component)());
 
 list.addEventListener('click', (event) => {
   event.stopPropagation();
-
   switch (event.target.tagName) {
     case 'p':
       (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.showEditInput)(event.target);
       break;
-    case 'SPAN':
+    case 'I':
       (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.removeTodo)(event.target);
       break;
   }
@@ -17947,8 +17958,19 @@ list.addEventListener('keypress', (event) => {
 
 document.addEventListener('click', (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.updateTodo)());
 
+addBtn.addEventListener('click', (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.createTodo)());
+
 addInput.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
+    const userEnteredValue = addInput.value; 
+    const getLocalStorageData = localStorage.getItem('New Todo'); 
+    if (getLocalStorageData == null) {
+      var listArray = []; 
+    } else {
+      var listArray = JSON.parse(getLocalStorageData);
+    }
+    listArray.push(userEnteredValue);
+    localStorage.setItem('New Todo', JSON.stringify(listArray));
     (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.createTodo)();
   }
 });
