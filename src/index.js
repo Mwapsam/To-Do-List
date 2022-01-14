@@ -1,4 +1,3 @@
-/* eslint-disable default-case */
 import { component } from './modules/lodash.js';
 import './style.css';
 import {
@@ -17,6 +16,7 @@ document.body.appendChild(component());
 
 list.addEventListener('click', (event) => {
   event.stopPropagation();
+  // eslint-disable-next-line default-case
   switch (event.target.tagName) {
     case 'P':
       showEditInput(event.target);
@@ -32,9 +32,9 @@ list.addEventListener('change', (event) => {
 
 list.addEventListener('keypress', (event) => {
   if (
-    event.target.tagName === 'INPUT' &&
-    event.target.type === 'text' &&
-    event.key === 'Enter'
+    event.target.tagName === 'INPUT'
+    && event.target.type === 'text'
+    && event.key === 'Enter'
   ) {
     updateTodo();
   }
@@ -51,4 +51,3 @@ addInput.addEventListener('keypress', (event) => {
 });
 
 window.onload = loadTodo();
-// eslint-disable-next-line no-multiple-empty-lines

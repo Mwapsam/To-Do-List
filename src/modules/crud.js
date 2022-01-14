@@ -1,7 +1,3 @@
-/* eslint-disable no-redeclare */
-/* eslint-disable block-scoped-var */
-/* eslint-disable no-var */
-/* eslint-disable vars-on-top */
 const list = document.getElementById('todos-list');
 const addInput = document.getElementById('todo-input');
 
@@ -102,7 +98,6 @@ export const updateTodo = () => {
   const editInput = document.getElementsByName('editInput')[0];
 
   if (!editInput) {
-    // eslint-disable-next-line no-useless-return
     return;
   }
 
