@@ -105,3 +105,12 @@ input[type='checkbox'] {
 button {
   border: none;
 }
+
+.add {
+  cursor: pointer;
+}
+
+.complete {
+  text-decoration: line-through;
+  font-style: italic;
+}
