@@ -1,4 +1,3 @@
-import component from './modules/lodash.js';
 import './style.css';
 import {
   createTodo,
@@ -11,8 +10,6 @@ import {
 const list = document.getElementById('todos-list');
 const addInput = document.getElementById('todo-input');
 const addBtn = document.getElementById('rotate');
-
-document.body.appendChild(component());
 
 list.addEventListener('click', (event) => {
   event.stopPropagation();

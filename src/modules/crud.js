@@ -47,6 +47,8 @@ export const loadTodo = () => {
       checkbox.type = 'checkbox';
       checkbox.id = element.index;
 
+      checkbox.checked = element.completed;
+
       const paragraph = document.createElement('p');
       paragraph.id = element.index;
       paragraph.classList.add('paragraph');
@@ -59,8 +61,9 @@ export const loadTodo = () => {
       remove.value = i;
       remove.addEventListener('click', () => {
         const local = getLocal();
-        local.splice(i, 1);
-        updateLocal(local);
+        const m = local.filter((e, m) => m !== i);
+
+        updateLocal(m);
         loadTodo();
       });
       remove.classList.add('remove');
