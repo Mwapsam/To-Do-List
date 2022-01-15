@@ -1,4 +1,4 @@
-import { component } from './modules/lodash.js';
+import component from './modules/lodash.js';
 import './style.css';
 import {
   createTodo,
@@ -43,7 +43,10 @@ list.addEventListener('keypress', (event) => {
 
 document.addEventListener('click', updateTodo());
 
-addBtn.addEventListener('click', loadTodo());
+addBtn.addEventListener('click', (event) => {
+  event.stopPropagation();
+  createTodo();
+});
 
 addInput.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
