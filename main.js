@@ -7,17 +7,15 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "component": () => (/* binding */ component)
+/* harmony export */   "default": () => (/* binding */ component)
 /* harmony export */ });
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2);
 /* harmony import */ var lodash__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(lodash__WEBPACK_IMPORTED_MODULE_0__);
-/* eslint-disable import/prefer-default-export */
 
 
 function component() {
   const element = document.createElement('div');
 
-  // Lodash, now imported by this script
   element.innerHTML = (lodash__WEBPACK_IMPORTED_MODULE_0___default());
 
   return element;
@@ -17590,7 +17588,7 @@ __webpack_require__.r(__webpack_exports__);
 var ___CSS_LOADER_EXPORT___ = _node_modules_css_loader_dist_runtime_api_js__WEBPACK_IMPORTED_MODULE_1___default()((_node_modules_css_loader_dist_runtime_noSourceMaps_js__WEBPACK_IMPORTED_MODULE_0___default()));
 ___CSS_LOADER_EXPORT___.push([module.id, "@import url(https://fonts.googleapis.com/css2?family=Lato&display=swap);"]);
 // Module
-___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  width: 100%;\r\n  height: 100vh;\r\n  background: rgb(240, 239, 243);\r\n}\r\n\r\n.list {\r\n  background: #f2f2f2;\r\n  max-width: 400px;\r\n  width: 100%;\r\n  margin: 120px auto;\r\n  padding: 25px;\r\n  border-radius: 5px;\r\n  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n.row {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: baseline;\r\n  gap: 10px;\r\n  border-bottom: 1px solid #ddd;\r\n  font-family: var(--lato);\r\n  font-size: 1.2em;\r\n  color: #777;\r\n}\r\n\r\n.todos-list {\r\n  max-height: 300px;\r\n  overflow-y: auto;\r\n}\r\n\r\n.todos-list li {\r\n  display: grid;\r\n  grid-template-columns: 1fr 13fr 1fr;\r\n  border: 1px solid #ddd;\r\n  align-items: baseline;\r\n  position: relative;\r\n  list-style: none;\r\n  margin: 8px;\r\n  background: #f2f2f2;\r\n  border-radius: 3px;\r\n  padding: 0 17px;\r\n  cursor: default;\r\n  overflow: hidden;\r\n  word-wrap: break-word;\r\n}\r\n\r\n.row p {\r\n  flex-basis: 80%;\r\n}\r\n\r\n.todos-list li p {\r\n  font-family: var(--lato);\r\n  font-size: 1.2em;\r\n  color: #777;\r\n}\r\n\r\n.rotate {\r\n  transform: rotate(90deg);\r\n}\r\n\r\n.add-input {\r\n  margin: 0;\r\n  border: none;\r\n  border-radius: 0;\r\n  width: 75%;\r\n  padding: 10px;\r\n  float: left;\r\n  font-size: 16px;\r\n  background: #f2f2f2;\r\n  color: #777;\r\n}\r\n\r\n.editInput {\r\n  position: absolute;\r\n  height: 55px;\r\n  width: 100%;\r\n  border: none;\r\n  font-size: 20px;\r\n  padding-left: 10px;\r\n}\r\n\r\ninput[type='checkbox'] {\r\n  transform: scale(1.3);\r\n}\r\n\r\n.clear {\r\n  text-align: center;\r\n  background-color: var(--gray);\r\n}\r\n\r\n.list div:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.span-item {\r\n  display: flex;\r\n  justify-content: flex-start;\r\n  align-items: baseline;\r\n}\r\n", ""]);
+___CSS_LOADER_EXPORT___.push([module.id, "body {\r\n  width: 100%;\r\n  height: 100vh;\r\n  background: rgb(240, 239, 243);\r\n}\r\n\r\n.list {\r\n  background: #f2f2f2;\r\n  max-width: 400px;\r\n  width: 100%;\r\n  margin: 120px auto;\r\n  padding: 25px;\r\n  border-radius: 5px;\r\n  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);\r\n}\r\n\r\n.row {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: baseline;\r\n  gap: 10px;\r\n  border-bottom: 1px solid #ddd;\r\n  font-family: var(--lato);\r\n  font-size: 1.2em;\r\n  color: #777;\r\n}\r\n\r\n.todos-list {\r\n  max-height: 300px;\r\n  overflow-y: auto;\r\n}\r\n\r\n.todos-list li {\r\n  display: grid;\r\n  grid-template-columns: 1fr 13fr 1fr;\r\n  border: 1px solid #ddd;\r\n  align-items: baseline;\r\n  position: relative;\r\n  list-style: none;\r\n  margin: 8px;\r\n  background: #f2f2f2;\r\n  border-radius: 3px;\r\n  padding: 0 17px;\r\n  cursor: default;\r\n  overflow: hidden;\r\n  word-wrap: break-word;\r\n}\r\n\r\n.row p {\r\n  flex-basis: 80%;\r\n}\r\n\r\n.todos-list li p {\r\n  font-family: var(--lato);\r\n  font-size: 1.2em;\r\n  color: #777;\r\n}\r\n\r\n.rotate {\r\n  transform: rotate(90deg);\r\n}\r\n\r\n.add-input {\r\n  margin: 0;\r\n  border: none;\r\n  border-radius: 0;\r\n  width: 75%;\r\n  padding: 10px;\r\n  float: left;\r\n  font-size: 16px;\r\n  background: #f2f2f2;\r\n  color: #777;\r\n}\r\n\r\n.editInput {\r\n  position: absolute;\r\n  height: 55px;\r\n  width: 100%;\r\n  border: none;\r\n  font-size: 20px;\r\n  padding-left: 10px;\r\n}\r\n\r\ninput[type='checkbox'] {\r\n  transform: scale(1.3);\r\n}\r\n\r\n.clear {\r\n  text-align: center;\r\n  background-color: var(--gray);\r\n}\r\n\r\n.list div:last-child {\r\n  border-bottom: none;\r\n}\r\n\r\n.span-item {\r\n  display: flex;\r\n  justify-content: flex-start;\r\n  align-items: baseline;\r\n}\r\n\r\nbutton {\r\n  border: none;\r\n}\r\n\r\n.add {\r\n  cursor: pointer;\r\n}\r\n\r\n.complete {\r\n  text-decoration: line-through;\r\n  font-style: italic;\r\n}\r\n", ""]);
 // Exports
 /* harmony default export */ const __WEBPACK_DEFAULT_EXPORT__ = (___CSS_LOADER_EXPORT___);
 
@@ -17727,12 +17725,9 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export */   "showEditInput": () => (/* binding */ showEditInput),
 /* harmony export */   "toggleComplete": () => (/* binding */ toggleComplete)
 /* harmony export */ });
-/* eslint-disable no-redeclare */
-/* eslint-disable block-scoped-var */
-/* eslint-disable no-var */
-/* eslint-disable vars-on-top */
 const list = document.getElementById('todos-list');
 const addInput = document.getElementById('todo-input');
+const completed = document.getElementById('completed');
 
 let listArray = [];
 
@@ -17777,9 +17772,10 @@ const loadTodo = () => {
       const checkbox = document.createElement('input');
       checkbox.classList.add('checkbox');
       checkbox.type = 'checkbox';
+      checkbox.id = element.index;
 
       const paragraph = document.createElement('p');
-      paragraph.id = i;
+      paragraph.id = element.index;
       paragraph.classList.add('paragraph');
       paragraph.textContent = element.description;
 
@@ -17795,8 +17791,7 @@ const loadTodo = () => {
         loadTodo();
       });
       remove.classList.add('remove');
-      // eslint-disable-next-line quotes
-      remove.innerHTML = `<i class="fas fa-trash delete-icon"></i>`;
+      remove.innerHTML = '<i class="fas fa-trash delete-icon"></i>';
 
       li.appendChild(checkbox);
       li.appendChild(paragraph);
@@ -17831,7 +17826,6 @@ const updateTodo = () => {
   const editInput = document.getElementsByName('editInput')[0];
 
   if (!editInput) {
-    // eslint-disable-next-line no-useless-return
     return;
   }
 
@@ -17881,11 +17875,47 @@ const showEditInput = (paregraphElement) => {
   input.focus();
 };
 
+// eslint-disable-next-line no-unused-vars
+const removeTodo = (todoId, clear = false) => {
+  let currentList = getLocal();
+  if (!clear) {
+    currentList = currentList.filter((todo) => todo.id !== todoId);
+  } else {
+    currentList = currentList.filter((todo) => todo.id !== true);
+  }
+  updateLocal(currentList);
+};
+
+list.addEventListener('click', (e) => {
+  if (e.target.tagName === 'INPUT') {
+    const checkbox = e.target.checked;
+    const currentList = getLocal();
+    const task = currentList.find((todo) => todo.index === Number(e.target.id));
+    task.completed = checkbox;
+    updateLocal(currentList);
+  }
+});
+
+const clearCompleted = () => {
+  let currentList = getLocal();
+
+  currentList = currentList.filter((todo) => !todo.completed);
+  currentList = currentList.map((todo, index) => {
+    todo.index = index + 1;
+    return todo;
+  });
+  updateLocal(currentList);
+  loadTodo();
+};
+
+completed.addEventListener('click', clearCompleted);
+
 const toggleComplete = (inputElement) => {
   if (inputElement.checked === false) {
     inputElement.parentElement.classList.remove('complete');
   } else {
     inputElement.parentElement.classList.add('complete');
+    inputElement.checked = true;
   }
 };
 
@@ -17991,7 +18021,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_lodash_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(1);
 /* harmony import */ var _style_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3);
 /* harmony import */ var _modules_crud_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(13);
-/* eslint-disable default-case */
 
 
 
@@ -18000,7 +18029,7 @@ const list = document.getElementById('todos-list');
 const addInput = document.getElementById('todo-input');
 const addBtn = document.getElementById('rotate');
 
-document.body.appendChild((0,_modules_lodash_js__WEBPACK_IMPORTED_MODULE_0__.component)());
+document.body.appendChild((0,_modules_lodash_js__WEBPACK_IMPORTED_MODULE_0__["default"])());
 
 list.addEventListener('click', (event) => {
   event.stopPropagation();
@@ -18008,6 +18037,8 @@ list.addEventListener('click', (event) => {
     case 'P':
       (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.showEditInput)(event.target);
       break;
+
+    default:
   }
 });
 
@@ -18029,7 +18060,10 @@ list.addEventListener('keypress', (event) => {
 
 document.addEventListener('click', (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.updateTodo)());
 
-addBtn.addEventListener('click', (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.createTodo)());
+addBtn.addEventListener('click', (event) => {
+  event.stopPropagation();
+  (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.createTodo)();
+});
 
 addInput.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
@@ -18038,7 +18072,6 @@ addInput.addEventListener('keypress', (event) => {
 });
 
 window.onload = (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_2__.loadTodo)();
-// eslint-disable-next-line no-multiple-empty-lines
 
 })();
 
