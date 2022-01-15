@@ -1,4 +1,3 @@
-import { component } from './modules/lodash.js';
 import './style.css';
 import {
   createTodo,
@@ -11,8 +10,6 @@ import {
 const list = document.getElementById('todos-list');
 const addInput = document.getElementById('todo-input');
 const addBtn = document.getElementById('rotate');
-
-document.body.appendChild(component());
 
 list.addEventListener('click', (event) => {
   event.stopPropagation();
@@ -33,9 +30,9 @@ list.addEventListener('change', (event) => {
 
 list.addEventListener('keypress', (event) => {
   if (
-    event.target.tagName === 'INPUT'
-    && event.target.type === 'text'
-    && event.key === 'Enter'
+    event.target.tagName === 'INPUT' &&
+    event.target.type === 'text' &&
+    event.key === 'Enter'
   ) {
     updateTodo();
   }
@@ -43,7 +40,10 @@ list.addEventListener('keypress', (event) => {
 
 document.addEventListener('click', updateTodo());
 
-addBtn.addEventListener('click', loadTodo());
+addBtn.addEventListener('click', (event) => {
+  event.stopPropagation();
+  createTodo();
+});
 
 addInput.addEventListener('keypress', (event) => {
   if (event.key === 'Enter') {
