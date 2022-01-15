@@ -786,9 +786,9 @@ list.addEventListener('change', (event) => {
 
 list.addEventListener('keypress', (event) => {
   if (
-    event.target.tagName === 'INPUT' &&
-    event.target.type === 'text' &&
-    event.key === 'Enter'
+    event.target.tagName === 'INPUT'
+    && event.target.type === 'text'
+    && event.key === 'Enter'
   ) {
     (0,_modules_crud_js__WEBPACK_IMPORTED_MODULE_1__.updateTodo)();
   }
