@@ -30,9 +30,9 @@ list.addEventListener('change', (event) => {
 
 list.addEventListener('keypress', (event) => {
   if (
-    event.target.tagName === 'INPUT'
-    && event.target.type === 'text'
-    && event.key === 'Enter'
+    event.target.tagName === 'INPUT' &&
+    event.target.type === 'text' &&
+    event.key === 'Enter'
   ) {
     updateTodo();
   }
