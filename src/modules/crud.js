@@ -1,5 +1,6 @@
 const list = document.getElementById('todos-list');
 const addInput = document.getElementById('todo-input');
+const completed = document.getElementById('completed');
 
 let listArray = [];
 
@@ -44,9 +45,14 @@ export const loadTodo = () => {
       const checkbox = document.createElement('input');
       checkbox.classList.add('checkbox');
       checkbox.type = 'checkbox';
+      checkbox.id = element.index;
+
+      checkbox.checked = element.completed;
+
+      checkbox.checked = element.completed;
 
       const paragraph = document.createElement('p');
-      paragraph.id = i;
+      paragraph.id = element.index;
       paragraph.classList.add('paragraph');
       paragraph.textContent = element.description;
 
@@ -57,8 +63,9 @@ export const loadTodo = () => {
       remove.value = i;
       remove.addEventListener('click', () => {
         const local = getLocal();
-        local.splice(i, 1);
-        updateLocal(local);
+        const m = local.filter((e, m) => m !== i);
+
+        updateLocal(m);
         loadTodo();
       });
       remove.classList.add('remove');
@@ -146,10 +153,46 @@ export const showEditInput = (paregraphElement) => {
   input.focus();
 };
 
+// eslint-disable-next-line no-unused-vars
+const removeTodo = (todoId, clear = false) => {
+  let currentList = getLocal();
+  if (!clear) {
+    currentList = currentList.filter((todo) => todo.id !== todoId);
+  } else {
+    currentList = currentList.filter((todo) => todo.id !== true);
+  }
+  updateLocal(currentList);
+};
+
+list.addEventListener('click', (e) => {
+  if (e.target.tagName === 'INPUT') {
+    const checkbox = e.target.checked;
+    const currentList = getLocal();
+    const task = currentList.find((todo) => todo.index === Number(e.target.id));
+    task.completed = checkbox;
+    updateLocal(currentList);
+  }
+});
+
+const clearCompleted = () => {
+  let currentList = getLocal();
+
+  currentList = currentList.filter((todo) => !todo.completed);
+  currentList = currentList.map((todo, index) => {
+    todo.index = index + 1;
+    return todo;
+  });
+  updateLocal(currentList);
+  loadTodo();
+};
+
+completed.addEventListener('click', clearCompleted);
+
 export const toggleComplete = (inputElement) => {
   if (inputElement.checked === false) {
     inputElement.parentElement.classList.remove('complete');
   } else {
     inputElement.parentElement.classList.add('complete');
+    inputElement.checked = true;
   }
 };
