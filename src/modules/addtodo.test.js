@@ -8,38 +8,40 @@ let tasks = [
   },
 ];
 
-test('An array was added', () => {
-  document.body.innerHTML = '<div class="todos-list" id="todos-list"></div>';
+describe('Add task function', () => {
+  test('A task was added', () => {
+    document.body.innerHTML = '<div class="todos-list" id="todos-list"></div>';
 
-  let div = document.querySelector('.todos-list');
-  let li;
+    let div = document.querySelector('.todos-list');
+    let li;
 
-  createTodo(tasks);
-  tasks.forEach((element) => {
-    li = document.createElement('li');
-    li.innerHTML = element.description;
-    div.appendChild(li);
+    createTodo(tasks);
+    tasks.forEach((element) => {
+      li = document.createElement('li');
+      li.innerHTML = element.description;
+      div.appendChild(li);
+    });
+    let anotherVar = document.querySelectorAll('.todos-list li');
+
+    expect(anotherVar).toHaveLength(2);
   });
-  let anotherVar = document.querySelectorAll('.todos-list li');
 
-  expect(anotherVar).toHaveLength(2);
-});
+  test('Three tasks were added', () => {
+    document.body.innerHTML = '<div class="todos-list" id="todos-list"></div>';
 
-test('An array was added', () => {
-  document.body.innerHTML = '<div class="todos-list" id="todos-list"></div>';
+    let div = document.querySelector('.todos-list');
+    let li;
 
-  let div = document.querySelector('.todos-list');
-  let li;
+    createTodo(tasks);
+    createTodo(tasks);
+    createTodo(tasks);
+    tasks.forEach((element) => {
+      li = document.createElement('li');
+      li.innerHTML = element.description;
+      div.appendChild(li);
+    });
+    let anotherVar = document.querySelectorAll('.todos-list li');
 
-  createTodo(tasks);
-  createTodo(tasks);
-  createTodo(tasks);
-  tasks.forEach((element) => {
-    li = document.createElement('li');
-    li.innerHTML = element.description;
-    div.appendChild(li);
+    expect(anotherVar).toHaveLength(5);
   });
-  let anotherVar = document.querySelectorAll('.todos-list li');
-
-  expect(anotherVar).toHaveLength(5);
 });
