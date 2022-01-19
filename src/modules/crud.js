@@ -35,47 +35,27 @@ const mSort = (callback) => {
   callback();
 };
 
+let removeTask = (index) => {
+  const local = getLocal();
+  const m = local.filter((e, m) => m !== index);
+  updateLocal(m);
+  loadTodo();
+};
+
 export const loadTodo = () => {
   mSort(() => {
     list.innerHTML = '';
     const local = getLocal();
 
-    local.forEach((element, i) => {
-      const li = document.createElement('li');
-      const checkbox = document.createElement('input');
-      checkbox.classList.add('checkbox');
-      checkbox.type = 'checkbox';
-      checkbox.id = element.index;
+    local.forEach((element) => {
+      list.innerHTML += `<li><input class="checkbox" type="checkbox" id="${element.index}"><p class="paragraph" id="${element.index}">${element.description}</p><i id="${element.index}" class="fas fa-trash delete-icon"></i></li>`;
 
-      checkbox.checked = element.completed;
-
-      checkbox.checked = element.completed;
-
-      const paragraph = document.createElement('p');
-      paragraph.id = element.index;
-      paragraph.classList.add('paragraph');
-      paragraph.textContent = element.description;
-
-      const div = document.createElement('div');
-      div.classList.add('TextItems');
-
-      const remove = document.createElement('button');
-      remove.value = i;
-      remove.addEventListener('click', () => {
-        const local = getLocal();
-        const m = local.filter((e, m) => m !== i);
-
-        updateLocal(m);
-        loadTodo();
+      let remove = document.querySelectorAll('.fa-trash');
+      remove.forEach((icon) => {
+        icon.addEventListener('click', () => {
+          removeTask(icon.id - 1);
+        });
       });
-      remove.classList.add('remove');
-      remove.innerHTML = '<i class="fas fa-trash delete-icon"></i>';
-
-      li.appendChild(checkbox);
-      li.appendChild(paragraph);
-      li.appendChild(remove);
-      list.appendChild(li);
-
       addInput.value = '';
     });
   });
@@ -151,17 +131,6 @@ export const showEditInput = (paregraphElement) => {
 
   paregraphElement.parentElement.appendChild(input);
   input.focus();
-};
-
-// eslint-disable-next-line no-unused-vars
-const removeTodo = (todoId, clear = false) => {
-  let currentList = getLocal();
-  if (!clear) {
-    currentList = currentList.filter((todo) => todo.id !== todoId);
-  } else {
-    currentList = currentList.filter((todo) => todo.id !== true);
-  }
-  updateLocal(currentList);
 };
 
 list.addEventListener('click', (e) => {
