@@ -24,3 +24,22 @@ test('An array was added', () => {
 
   expect(anotherVar).toHaveLength(2);
 });
+
+test('An array was added', () => {
+  document.body.innerHTML = '<div class="todos-list" id="todos-list"></div>';
+
+  let div = document.querySelector('.todos-list');
+  let li;
+
+  createTodo(tasks);
+  createTodo(tasks);
+  createTodo(tasks);
+  tasks.forEach((element) => {
+    li = document.createElement('li');
+    li.innerHTML = element.description;
+    div.appendChild(li);
+  });
+  let anotherVar = document.querySelectorAll('.todos-list li');
+
+  expect(anotherVar).toHaveLength(5);
+});
