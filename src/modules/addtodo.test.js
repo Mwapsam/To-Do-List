@@ -1,6 +1,6 @@
-const createTodo = require('./addtodo');
+import createTodo from './addtodo.js';
 
-let tasks = [
+const tasks = [
   {
     description: 'Hello',
     index: 1,
@@ -11,16 +11,15 @@ let tasks = [
 test('An array was added', () => {
   document.body.innerHTML = '<div class="todos-list" id="todos-list"></div>';
 
-  let div = document.querySelector('.todos-list');
-  let li;
+  const div = document.querySelector('.todos-list');
 
   createTodo(tasks);
   tasks.forEach((element) => {
-    li = document.createElement('li');
+    const li = document.createElement('li');
     li.innerHTML = element.description;
     div.appendChild(li);
   });
-  let anotherVar = document.querySelectorAll('.todos-list li');
+  const todos = document.querySelectorAll('.todos-list li');
 
-  expect(anotherVar).toHaveLength(2);
+  expect(todos).toHaveLength(2);
 });
