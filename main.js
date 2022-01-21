@@ -605,7 +605,7 @@ const updateTodo = () => {
     const newList = [];
 
     local.forEach((element, i) => {
-      if (position === i) {
+      if (position === i + 1) {
         newList.push({
           index: element.index,
           description: newText,
