@@ -1,6 +1,6 @@
 const removeTask = require('./remove');
 
-let tasks = [
+const tasks = [
   {
     description: 'Hello',
     completed: false,
@@ -8,11 +8,8 @@ let tasks = [
   },
 ];
 
-test('A task was removed', () => {
-  document.body.innerHTML =
-    '<div class="todos-list" id="todos-list"><li id="listitem">New Task</li></div>';
-  let div = document.querySelector('.todos-list');
-  let list = document.querySelector('#listitem');
-  removeTask(0, tasks);
-  expect(removeTask().length).toBe(0);
+test('Should delete item from localstorage', () => {
+  const currentLength = tasks.length;
+  console.log(removeTask.length);
+  expect(removeTask(tasks, 0).length).toBe(currentLength - 1);
 });
