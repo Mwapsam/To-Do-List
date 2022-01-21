@@ -6,4 +6,4 @@ const createTodo = (listArray) => {
   });
 };
 
-module.exports = createTodo;
+export default createTodo;
