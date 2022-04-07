@@ -5,8 +5,8 @@ const completed = document.getElementById('completed');
 let listArray = [];
 
 const getLocal = () => {
-  const possibleList = localStorage.getItem('New Todo');
-  if (possibleList !== undefined && possibleList !== null) {
+  const possibleList = localStorage.getItem('todos');
+  if (possibleList) {
     return JSON.parse(possibleList);
   }
 
@@ -14,7 +14,7 @@ const getLocal = () => {
 };
 
 const updateLocal = (newData) => {
-  localStorage.setItem('New Todo', JSON.stringify(newData));
+  localStorage.setItem('todos', JSON.stringify(newData));
 };
 
 const mSort = (callback) => {
@@ -46,9 +46,6 @@ export const loadTodo = () => {
       checkbox.classList.add('checkbox');
       checkbox.type = 'checkbox';
       checkbox.id = element.index;
-
-      checkbox.checked = element.completed;
-
       checkbox.checked = element.completed;
 
       const paragraph = document.createElement('p');
